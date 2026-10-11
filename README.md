@@ -37,6 +37,17 @@ TS 7 sont marquées `TS 5 uniquement`, les nouvelles `TS 7 uniquement`.
   d'installation pour npm / pnpm / yarn / bun.
 - Thème clair / sombre, utilisable au clavier, et lisible sur téléphone.
 
+## Déploiement
+
+La page est publiée sur GitHub Pages par `.github/workflows/pages.yml` à chaque push sur la
+branche par défaut : le workflow reconstruit `index.html` depuis `src/` et `data/`, échoue si le
+fichier commité est périmé, puis publie la page seule.
+
+**Une activation manuelle est nécessaire une fois**, car le `GITHUB_TOKEN` d'Actions n'a pas le
+droit de créer un site Pages : dans **Settings → Pages**, mettre **Source** sur
+**GitHub Actions**. Le workflow suivant publiera sur
+<https://saturna19-fr.github.io/scaffolder-typescript/>.
+
 ## Vérification
 
 Les configurations produites sont testées contre les vrais outils, pas seulement relues :
